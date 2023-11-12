@@ -1,0 +1,24 @@
+.nav-link:hover{
+    color: #fff !important; 
+}
+
+.navbar{
+    background-color: black !important;
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.nav-link {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.dldbtns{
+    display: flex;
+    justify-content: center;
+}
+
+.dldbtns button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
