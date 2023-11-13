@@ -8,19 +8,44 @@
 
 **Home**
 
-![Homepage](FileUploadModule/Screenshots/Home.png)
+![HomePage](FileUploadModule/Screenshots/Home.png)
 
 **Upload**
 
-![Uploadpage](FileUploadModule/Screenshots/Upload.png)
+![UploadPage](FileUploadModule/Screenshots/Upload.png)
 
 **Download**
 
-![Downloadpage](FileUploadModule/Screenshots/Download.png)
+![DownloadPage](FileUploadModule/Screenshots/Download.png)
+
+**Upload Files**
+
+![FileUploadPage](FileUploadModule/Screenshots/FileUpload.png)
 
 **Search**
 
-![Searchpage](FileUploadModule/Screenshots/Search.png)
+![SearchPage](FileUploadModule/Screenshots/Search.png)
+
+**Search Files**
+
+![SearchFilePage](FileUploadModule/Screenshots/SearchFiles.png)
+
+**Download Files**
+
+![DownloadFilePage](FileUploadModule/Screenshots/DownloadFiles.png)
+
+**View Files(CSV / XLSX)**
+
+![ViewFiles(CSV/XLSX)](FileUploadModule/Screenshots/ViewFiles(CSC,XLSX).png)
+
+**View Files(PDF)**
+
+![ViewFiles(PDF)](FileUploadModule/Screenshots/ViewFiles(PDF).png)
+
+**Delete Files**
+
+![DeleteFilePage](FileUploadModule/Screenshots/DeleteFiles.png)
+
 ## Developed Using
 
 **IDE :** Visual Studio Code

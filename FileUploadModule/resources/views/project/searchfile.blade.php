@@ -150,7 +150,7 @@
                         //If it is a Positive Response
                         if (result.status === 'Success') {
                             var status = $(
-                                '<h3 class="text-success mb-3">' + result
+                                '<h3 class="text-success mt-5 mb-3">' + result
                                 .status + '</h1>'
                             );
                             var action = $('<h2 class="mb-3 text-danger">' + result

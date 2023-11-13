@@ -861,21 +861,95 @@ class FileController extends Controller
     {
         //Try to acheive the Flow of Process
         try {
-            // if ($type === 'pdf') {}elseif ($type==='csv') {}elseif ($type==='xlsx') {}elseif ($type==='txtdocx') {}else{}
-            $data = DB::table('csvfiles')->get();
 
-            //Checking whether data is present
-            if ($data->count() > 0) {
+            //Checking whether the type is CSV
+            if ($type === 'csv') {
 
-                //Returning with Success Response
-                return response()->json(['status' => 'Success', 'tabledata' => $data]);
+                //Retrieving all the records for CSVFILES table
+                $data = DB::table('csvfiles')->get();
+
+                //Checking whether data is present
+                if ($data->count() > 0) {
+
+                    //Returning with Success Response
+                    return response()->json(['status' => 'Success', 'tabledata' => $data]);
+                }
+                //If No Data Present in the Table
+                else {
+
+                    //Returing with Error Response
+                    return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
+                }
             }
-            //If No Data Present in the Table
+
+             //Checking whether the type is XLSX
+             elseif ($type === 'xlsx') {
+
+                //Retrieving all the records for XLSXFILES table
+                $data = DB::table('xlsxfiles')->get();
+
+                //Checking whether data is present
+                if ($data->count() > 0) {
+
+                    //Returning with Success Response
+                    return response()->json(['status' => 'Success', 'tabledata' => $data]);
+                }
+                //If No Data Present in the Table
+                else {
+
+                    //Returing with Error Response
+                    return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
+                }
+            }
+            
+            //Checking whether the type is PDF
+            elseif ($type === 'pdf') {
+
+                //Retrieving all the records for PDFFILES table
+                $data = DB::table('pdffiles')->get();
+
+                //Checking whether data is present
+                if ($data->count() > 0) {
+
+                    //Returning with Success Response
+                    return response()->json(['status' => 'Success', 'tabledata' => $data]);
+                }
+
+                //If No Data Present in the Table
+                else {
+
+                    //Returing with Error Response
+                    return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
+                }
+            }
+            
+             //Checking whether the type is TXT or DOC or DOCX
+             elseif ($type === 'txtdocx') {
+
+                //Retrieving all the records for DOCFILES table
+                $data = DB::table('docfiles')->get();
+
+                //Checking whether data is present
+                if ($data->count() > 0) {
+
+                    //Returning with Success Response
+                    return response()->json(['status' => 'Success', 'tabledata' => $data]);
+                }
+
+                //If No Data Present in the Table
+                else {
+
+                    //Returing with Error Response
+                    return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
+                }
+            }
+
+            //Incase of some error
             else {
-
-                //Returing with Error Response
-                return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
+                //Returning the Error View
+                return view('error.error');
             }
+
 
         }
         //If any Exceptiion Occurs Catch and Display Error View
