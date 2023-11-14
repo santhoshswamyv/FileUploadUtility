@@ -8,35 +8,43 @@
 
 **Home**
 
-![HomePage](FileUploadModule/Screenshots/Home.png)
+![HomePage](FileUploadModule/Screenshots/HomePage.png)
 
 **Upload**
 
-![UploadPage](FileUploadModule/Screenshots/Upload.png)
+![UploadPage](FileUploadModule/Screenshots/UploadPage.png)
 
 **Download**
 
-![DownloadPage](FileUploadModule/Screenshots/Download.png)
+![DownloadPage](FileUploadModule/Screenshots/DownloadPage.png)
 
 **Upload Files**
 
-![FileUploadPage](FileUploadModule/Screenshots/FileUpload.png)
+![UploadSuccess](FileUploadModule/Screenshots/UploadSuccess.png)
 
 **Search**
 
-![SearchPage](FileUploadModule/Screenshots/Search.png)
+![SearchPage](FileUploadModule/Screenshots/SearchPage.png)
 
 **Search Files**
 
-![SearchFilePage](FileUploadModule/Screenshots/SearchFiles.png)
+![SearchSuccess](FileUploadModule/Screenshots/SearchSuccess.png)
+
+**Type Files**
+
+![TypeFiles](FileUploadModule/Screenshots/TypeFiles.png)
+
+**All Files**
+
+![AllFiles](FileUploadModule/Screenshots/AllFiles.png)
 
 **Download Files**
 
-![DownloadFilePage](FileUploadModule/Screenshots/DownloadFiles.png)
+![DownloadSuccess](FileUploadModule/Screenshots/DownloadFile.png)
 
-**View Files(CSV / XLSX)**
+**View Files(CSV /XLS/ XLSX)**
 
-![ViewFiles(CSV/XLSX)](FileUploadModule/Screenshots/ViewFiles(CSC,XLSX).png)
+![ViewFiles(CSV/XLS/XLSX)](FileUploadModule/Screenshots/ViewFiles(CSC,XLS,XLSX).png)
 
 **View Files(PDF)**
 
@@ -44,7 +52,7 @@
 
 **Delete Files**
 
-![DeleteFilePage](FileUploadModule/Screenshots/DeleteFiles.png)
+![DeleteFile](FileUploadModule/Screenshots/DeleteFile.png)
 
 ## Developed Using
 

@@ -23,7 +23,7 @@ class FileController extends Controller
 
             //Requesting the File Using Request Class & Validating the File and Size(Only Upto 5 MB)
             $request->validate([
-                'file' => 'required|mimes:csv,xlsx,txt,doc,docx,pdf|max:5120',
+                'file' => 'required|mimes:csv,xlsx,xls,txt,doc,docx,pdf|max:5120',
             ]);
 
             //Extract the Name to Store it to the Database 
@@ -71,7 +71,7 @@ class FileController extends Controller
                 return response()->json(['status' => 'Success', 'action' => 'File Uploaded', 'code' => $fileCode, 'name' => $fileName]);
             }
             //Check if the File-extension is XLSX
-            elseif ('xlsx' === $fileExtension) {
+            elseif ('xlsx' === $fileExtension || 'xls' === $fileExtension) {
 
                 //Extract the Path to Store it to the Database
                 $filePath = public_path('uploads/xlsx') . '/' . $fileName;
@@ -291,7 +291,7 @@ class FileController extends Controller
                 }
             }
             //Checking whether it is XLSX File
-            elseif ('xlsx' === $fileExtension) {
+            elseif ('xlsx' === $fileExtension || 'xls' === $fileExtension) {
 
                 //Getting the Path where the File is Stored
                 $filePath = public_path('uploads/xlsx') . '/' . $fileName;
@@ -528,7 +528,6 @@ class FileController extends Controller
             //Returning the Error View
             return view('error.error');
         }
-
     }
 
     public function downloadFile($fileName, $fileCode)
@@ -882,8 +881,8 @@ class FileController extends Controller
                 }
             }
 
-             //Checking whether the type is XLSX
-             elseif ($type === 'xlsx') {
+            //Checking whether the type is XLSX
+            elseif ($type === 'xlsx') {
 
                 //Retrieving all the records for XLSXFILES table
                 $data = DB::table('xlsxfiles')->get();
@@ -901,7 +900,7 @@ class FileController extends Controller
                     return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
                 }
             }
-            
+
             //Checking whether the type is PDF
             elseif ($type === 'pdf') {
 
@@ -922,12 +921,38 @@ class FileController extends Controller
                     return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
                 }
             }
-            
-             //Checking whether the type is TXT or DOC or DOCX
-             elseif ($type === 'txtdocx') {
+
+            //Checking whether the type is TXT or DOC or DOCX
+            elseif ($type === 'txtdocx') {
 
                 //Retrieving all the records for DOCFILES table
                 $data = DB::table('docfiles')->get();
+
+                //Checking whether data is present
+                if ($data->count() > 0) {
+
+                    //Returning with Success Response
+                    return response()->json(['status' => 'Success', 'tabledata' => $data]);
+                }
+
+                //If No Data Present in the Table
+                else {
+
+                    //Returing with Error Response
+                    return response()->json(['status' => 'Fail', 'reason' => 'No Files Present']);
+                }
+            }
+
+            //Checking whether the type is AllFiles
+            elseif ($type === 'allfiles') {
+
+                //Retrieving all the records from 4 tables
+                $data = DB::table('csvfiles')
+                    ->union(DB::table('xlsxfiles'))
+                    ->union(DB::table('pdffiles'))
+                    ->union(DB::table('docfiles'))
+                    ->get();
+
 
                 //Checking whether data is present
                 if ($data->count() > 0) {
@@ -949,8 +974,6 @@ class FileController extends Controller
                 //Returning the Error View
                 return view('error.error');
             }
-
-
         }
         //If any Exceptiion Occurs Catch and Display Error View
         catch (Throwable $e) {

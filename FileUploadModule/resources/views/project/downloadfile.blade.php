@@ -4,13 +4,15 @@
         <h1 class="text-light">Download Stored Files</h1>
     </div>
     <div class="row">
-        <div class="col-md-2"><a href="{{ url('/download/pdf') }}"><button class="btn btn-outline-danger">PDF
+        <div class="col-md-2"><a href="{{ url('/download/pdf') }}"><button class="btn btn-outline-danger"><i class="fa fa-file-pdf"></i> PDF
                     Files</button></a></div>
-        <div class="col-md-2"> <a href="{{ url('/download/csv') }}"><button class="btn btn-outline-success">CSV
+        <div class="col-md-2"> <a href="{{ url('/download/csv') }}"><button class="btn btn-outline-success"><i class="fas fa-file-csv"></i> CSV
                     File</button></a></div>
-        <div class="col-md-2"><a href="{{ url('/download/xlsx') }}"><button class="btn btn-outline-info">XLSX
+        <div class="col-md-2"><a href="{{ url('/download/xlsx') }}"><button class="btn btn-outline-info"><i class="fas fa-file-excel"></i> XLSX
                     Files</button></a></div>
-        <div class="col-md-2"><a href="{{ url('/download/txtdocx') }}"><button class="btn btn-outline-warning">TXT / DOCX
+        <div class="col-md-2"><a href="{{ url('/download/txtdocx') }}"><button class="btn btn-outline-warning"><i class="fa fa-file-word"></i> TXT / DOCX
+                    Files</button></a></div>
+        <div class="col-md-2"><a href="{{ url('/download/allfiles') }}"><button class="btn btn-outline-primary"><i class="fa fa-file"></i> All
                     Files</button></a></div>
     </div>
     <div id="result" class="mt-5"></div>
@@ -76,16 +78,16 @@
                             //Create the Action buttons
                             var button1 = $('<a href="/view/' + record.filename + '/' + record
                                 .filecode +
-                                '"><button class="btn btn-outline-primary">View File</button></a>'
+                                '"><button class="btn btn-outline-primary"><i class="fa fa-tv"></i> View File</button></a>'
                             );
                             var button2 = $('<a href="/download/' + record.filename + '/' +
                                 record
                                 .filecode +
-                                '"><button class="btn btn-outline-success">Download File</button></a>'
+                                '"><button class="btn btn-outline-success"><i class="fa fa-download"></i> Download File</button></a>'
                             );
                             var button3 = $('<a href="/delete/' + record.filename + '/' + record
                                 .filecode +
-                                '"><button class="btn btn-outline-danger delete-btn">Delete File</button></a>'
+                                '"><button class="btn btn-outline-danger delete-btn"><i class="fa fa-trash"></i> Delete File</button></a>'
                             );
 
                             //Add the buttons to the row

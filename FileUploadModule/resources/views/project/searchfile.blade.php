@@ -4,10 +4,10 @@
         @csrf
         <div class="mb-3 mt-3">
             <label for="filecode" class="form-label">Filecode : </label>
-            <input type="text" name="filecode" class="form-control" id="filecode" required>
+            <input type="text" name="filecode" placeholder="Filecode" class="form-control" id="filecode" required>
         </div>
         <div class="mb-3">
-            <input type="submit" id="submitbtn" class="btn btn-outline-info" value="Search">
+            <button type="submit" id="submitbtn" class="btn btn-outline-info"><i class="fa fa-search"></i> Search</button>
         </div>
     </form>
     <div id="searchResults" class="container-fluid"></div>
@@ -66,28 +66,28 @@
                                 .filename +
                                 '</h3>');
                             var btngrp = $('<div class="row"></div>');
-                            var viewbtn = $('<div class="col-md-1"><a href="/view/' + data
+                            var viewbtn = $('<div class="col-md-2"><a href="/view/' + data
                                 .recorddata
                                 .filename +
                                 '/' + data.recorddata
                                 .filecode +
-                                '"><button class="btn btn-outline-primary">View File</button></a></div>'
+                                '"><button class="btn btn-outline-primary"><i class="fa fa-display"></i> View File</button></a></div>'
                             );
                             var dwldbtn = $(
-                                '<div class="col-md-2" style="display:flex;justify-content:center;align-items:center;"><a href="/download/' +
+                                '<div class="col-md-2"><a href="/download/' +
                                 data
                                 .recorddata
                                 .filename +
                                 '/' + data.recorddata
                                 .filecode +
-                                '"><button class="btn btn-outline-success">Download File</button></a></div>'
+                                '"><button class="btn btn-outline-success"><i class="fa fa-download"></i> Download</button></a></div>'
                             );
                             var dltbtn = $('<div class="col-md-2"><a href="/delete/' + data
                                 .recorddata
                                 .filename +
                                 '/' + data.recorddata
                                 .filecode +
-                                '"><button class="btn btn-outline-danger delete-btn">Delete File</button></a></div>'
+                                '"><button class="btn btn-outline-danger delete-btn"><i class="fa fa-trash"></i> Delete File</button></a></div>'
                             );
 
                             //Appending all the buttons into single div
