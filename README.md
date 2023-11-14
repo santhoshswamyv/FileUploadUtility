@@ -44,7 +44,7 @@
 
 **View Files(CSV /XLS/ XLSX)**
 
-![ViewFiles(CSV/XLS/XLSX)](FileUploadModule/Screenshots/ViewFiles(CSC,XLS,XLSX).png)
+![ViewFiles(CSV/XLS/XLSX)](FileUploadModule/Screenshots/ViewFiles(CSV,XLS,XLSX).png)
 
 **View Files(PDF)**
 
